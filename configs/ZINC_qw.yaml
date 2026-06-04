@@ -1,0 +1,111 @@
+project_name: &_project_name !ENV "${LOGNAME}_topbf"
+exp_name: !SUB "${exp_name}_ZINC250k_TopBF_QW"
+debug: !SUB ${debug}
+test: !SUB ${test}
+no_wandb: !SUB ${no_wandb}
+logging_level: !SUB ${logging_level:-warning}
+
+#data
+dataset:
+  name: "ZINC250k"
+  datadir: !ENV "../dataset"
+  num_workers: 4
+  n_atom_types: &_n_atom_types 5
+  # atom_decoder: ['H', 'C', 'N', 'O', 'F']
+  # atomic_nb: [1, 6, 7, 8, 9]
+  n_node_histogram: [0, 0, 0, 0, 0, 0, 3, 5, 16, 71, 188, 693, 1153, 1726, 
+                      2743, 4213, 6156, 8404, 11215, 14034, 16941, 19478, 
+                      17664, 19937, 21908, 21591, 18361, 14992, 9475, 7374, 
+                      5771, 4502, 3499, 2461, 1642, 963, 369, 130, 2]
+  remove_h: True
+  normalizer_dict: 
+    # pos: 2.0
+    # one_hot: 1.0
+    # charges: 9.0
+  # colors_dic: ['#FFFFFF99', 'C7', 'C0', 'C3', 'C1']
+  # radius_dic: [0.46, 0.77, 0.77, 0.77, 0.77]
+
+  small_data: False
+  small_model: 0
+  data_size: 1
+
+#model
+dynamics:
+  name: "GraphTransformer"
+  in_node_nf: 128
+  hidden_nf: 64
+  n_layers: 9
+  n_head: 8
+  dim_ffX: 256
+  dim_ffE: 128
+  dim_ffy: 128
+  adj_scale: 1
+  scale_X: 5
+  scale_A: 1
+  sigma1_X: !SUB ${sigma1_X:-0.5}
+  sigma1_A: !SUB ${sigma1_A:-0.2}
+  beta1: !SUB ${beta1:-2.0}
+  sample_steps: !SUB ${sample_steps:-1000}
+  t_min: !SUB ${t_min:-0.0001}
+
+  eps_prob:           !SUB ${eps_prob:-1e-12}
+  mask_diag_edges:    !SUB ${mask_diag_edges:-True}
+
+  # ---------------- QW (optional) ----------------
+  # QW-style Sinkhorn OT regularizer (training only)
+  use_qw_loss:        !SUB ${use_qw_loss:-True}
+  qw_weight:          !SUB ${qw_weight:-0.05}
+  qw_eps:             !SUB ${qw_eps:-0.2}
+  qw_iters:           !SUB ${qw_iters:-20}
+  qw_dist_cap:        !SUB ${qw_dist_cap:-12}      # 新增：最短路最大截断距离（越小越快）
+  qw_on_edges:        !SUB ${qw_on_edges:-True}   # if True, also regularize bond-type probs
+  qw_edge_max_nodes:  !SUB ${qw_edge_max_nodes:-20}
+  qw_edge_max_pairs:  !SUB ${qw_edge_max_pairs:-400}
+
+  # num_layers: 6
+  
+
+
+optimization:
+  optimizer: "AdamW"
+  batch_size: &_bsize !SUB ${batch_size:-64}
+  # batch_size: 16
+  lr: !SUB ${lr:-0.0001}
+  epochs: !SUB ${epochs}
+  difftime: !SUB ${difftime:-True}
+  weight_decay: !SUB ${weight_decay:-1e-12}
+  resume: !SUB ${resume:-False}
+  recover_trigger_loss: !SUB ${recover_trigger_loss:-500}
+  skip_count_limit: !SUB ${skip_count_limit:-3}
+  maximum_allowed_norm: !SUB ${maximum_allowed_norm:-10000}
+
+evaluation:
+  eval_data_num: !SUB ${eval_data_num:-1000}
+  batch_size: *_bsize
+  single_bond: False
+
+
+accounting:
+  logdir: &_logdir !PATHJOIN ["./logs/", *_project_name, !SUB "${exp_name}_ZINC250k_TopBF_QW"]
+  wandb_logdir: *_logdir
+  dump_config_path: !PATHJOIN [*_logdir, "config.yaml"]
+  checkpoint_dir: &_checkpoint_dir !PATHJOIN [*_logdir, "checkpoints"]
+  ckpt_pattern: &_ckpt_pattern !SUB "${ckpt_pattern}"
+  checkpoint_path: !PATHJOIN [*_checkpoint_dir, *_ckpt_pattern]
+  generated_mol_dir: !PATHJOIN [*_logdir, "generated_mol"]
+  checkpoint_freq: !SUB ${checkpoint_freq:-10}
+  exp_version: !SUB ${exp_version:-None}
+
+#visualization
+visual:
+  save_mols: True
+  visual_nums: 10
+  visual_chain: True
+
+
+
+
+
+
+
+
