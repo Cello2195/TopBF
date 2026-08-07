@@ -1,175 +1,61 @@
-%%
-%% Copyright 2025 Oxford University Press
-%%
-%% This file is part of the 'oup-authoring-template Bundle'.
-%% ---------------------------------------------
-%%
-%% It may be distributed under the conditions of the LaTeX Project Public
-%% License, either version 1.3 of this license or (at your option) any
-%% later version.  The latest version of this license is in
-%%    https://www.latex-project.org/lppl.txt
-%% and version 1.2 or later is part of all distributions of LaTeX
-%% version 1999/12/01 or later.
-%%
-%% The list of all files belonging to the 'oup-authoring-template Bundle' is
-%% given in the file `manifest.txt'.
-%%
-%% Template article for Oxford University Press's document class `oup-authoring-template'
-%% with bibliographic references
-%%
+\documentclass[journal,twoside,web]{ieeecolor}
 
-%%%CONTEMPORARY%%%
-\documentclass[numsec,webpdf,contemporary,large]{oup-authoring-template}%
-% \documentclass[unnumsec,webpdf,contemporary,large,numbered]{oup-authoring-template}% uncomment this line to get the numbered reference output
-%\documentclass[unnumsec,webpdf,contemporary,medium]{oup-authoring-template}
-%\documentclass[unnumsec,webpdf,contemporary,mediumone]{oup-authoring-template}
-%\documentclass[unnumsec,webpdf,contemporary,small]{oup-authoring-template}
+\usepackage{generic}
+\usepackage{cite}
 
-%%%MODERN%%%
-%\documentclass[unnumsec,webpdf,modern,large]{oup-authoring-template}
-%\documentclass[unnumsec,webpdf,modern,large,numbered]{oup-authoring-template}%   uncomment this line to get the numbered reference output
-%\documentclass[unnumsec,webpdf,modern,medium]{oup-authoring-template}
-%\documentclass[unnumsec,webpdf,modern,mediumone]{oup-authoring-template}
-%\documentclass[unnumsec,webpdf,modern,small]{oup-authoring-template}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{mathtools}
+\usepackage{bm}
 
-%%%TRADITIONAL%%%
-%\documentclass[unnumsec,webpdf,traditional,large]{oup-authoring-template}
-%\documentclass[unnumsec,webpdf,traditional,large,numbered]{oup-authoring-template}%   uncomment this line to get the numbered reference output
-%\documentclass[unnumsec,webpdf,traditional,medium]{oup-authoring-template}
-%\documentclass[unnumsec,webpdf,traditional,mediumone]{oup-authoring-template}
-% \documentclass[namedate,webpdf,traditional,small]{oup-authoring-template}
-
-%\onecolumn % for one column layouts
-
-%\usepackage{showframe}
-
-\usepackage{times}
-\usepackage{soul}
-\usepackage{url}
-\usepackage[hidelinks]{hyperref}
-\usepackage[utf8]{inputenc}
-% \usepackage[small]{caption}
 \usepackage{graphicx}
-\usepackage{amsmath}
-\usepackage{amsthm}
-\usepackage{booktabs}
-\usepackage{algorithm}
-\usepackage{algpseudocode}
-\usepackage[switch]{lineno}
-
-\usepackage{amsmath}
-\usepackage{amssymb} 
-\usepackage{amsthm}
 \usepackage{booktabs}
 \usepackage{makecell}
 \usepackage{multirow}
-\usepackage{mathtools}
 \usepackage{multicol}
-\usepackage{pifont} % 导入 pifont 宏包
-\usepackage{bm}
 
-\graphicspath{{Fig/}}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
 
-% line numbers
-%\usepackage[mathlines, switch]{lineno}
-%\usepackage[right]{lineno}
+\usepackage{textcomp}
+\usepackage{pifont}
+\usepackage{soul}
+\usepackage{url}
+\usepackage[switch]{lineno}
+\usepackage[hidelinks]{hyperref}
 
-\theoremstyle{thmstyleone}%
-\newtheorem{theorem}{Theorem}%  meant for continuous numbers
-%%\newtheorem{theorem}{Theorem}[section]% meant for sectionwise numbers
-%% optional argument [theorem] produces theorem numbering sequence instead of independent numbers for Proposition
-\newtheorem{proposition}[theorem]{Proposition}%
-%%\newtheorem{proposition}{Proposition}% to get separate numbers for theorem and proposition etc.
-\theoremstyle{thmstyletwo}%
-\newtheorem{example}{Example}%
-\newtheorem{remark}{Remark}%
-\theoremstyle{thmstylethree}%
-\newtheorem{definition}{Definition}
+\newtheorem{theorem}{Theorem}
 
-%\usepackage{draftwatermark}
-%\SetWatermarkText{Draft}
-%%Uncomment  \usepackage{draftwatermark} and \SetWatermarkText{Draft} to watermark your PDF as a draft
+\def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
+    T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
+\markboth{\hskip22pc IEEE JOURNAL OF BIOMEDICAL AND HEALTH INFORMATICS}
+{Xiong \MakeLowercase{\textit{et al.}}: Transport-Coupled Bayesian Flows for Molecular Graph Generation}
 \begin{document}
+\title{Transport-Coupled Bayesian Flows for Molecular Graph Generation}
+\author{
+    Yida Xiong$^{1,2}$, Jiameng Chen$^1$, Kun Li$^1$, Hongzhi Zhang$^1$, Xiantao Cai$^1$, Jia Wu$^3$, Lei Lei$^{4,\ast}$, Wenbin Hu$^{1,2,5\ast}$
+    \thanks{$^1$ School of Computer Science, Wuhan University, China}
+    \thanks{$^2$ Hubei Jiangxia Laboratory, China}
+    \thanks{$^3$ Department of Computing, Macquarie University, Australia}
+    \thanks{$^4$ Institute of Information on Traditional Chinese Medicine, China Academy of Chinese Medical Sciences, China}
+    \thanks{$^5$ Wuhan University Shenzhen Research Institute, China}
+}
 
-\journaltitle{Bioinformatics}
-\DOI{To be assigned}
-\copyrightyear{2026}
-\pubyear{20xx}
-\vol{XX}
-\issue{x}
-\access{To be assigned}
-\appnotes{Paper}
-
-\firstpage{1}
-
-%\subtitle{Subject Section}
-
-\title[Short Article Title]{Transport-Coupled Bayesian Flows for Molecular Graph Generation}
-
-\author[1]{Yida Xiong\ORCID{0009-0003-3182-3659}}
-\author[1]{Jiameng Chen\ORCID{0009-0004-3414-3621}}
-\author[1]{Kun Li\ORCID{0000-0002-7002-234X}}
-\author[1]{Hongzhi Zhang\ORCID{0009-0002-3726-5056}}
-\author[1]{Xiantao Cai}
-\author[2]{Jia Wu}
-\author[3,$\ast$]{Lei Lei}
-\author[1,4,$\ast$]{Wenbin Hu\ORCID{0000-0002-9258-3850}}
-
-\address[1]{\orgdiv{School of Computer Science}, \orgname{Wuhan University}, \orgaddress{\street{Wuhan}, \postcode{430037}, \state{Hubei}, \country{China}}}
-
-\address[2]{\orgdiv{Department of Computing}, \orgname{Macquarie University}, \orgaddress{\street{Sydney}, \country{Australia}}}
-\address[3]{\orgdiv{Institute of Information on Traditional Chinese Medicine}, \orgname{China Academy of Chinese Medical Sciences}, \orgaddress{\country{China}}}
-\address[4]{\orgdiv{Wuhan University Shenzhen Research Institute}, \orgaddress{\street{Shenzhen}, \country{China}}}
-% $^3$Wuhan University Shenzhen Research Institute, Shenzhen, China\\
-
-
-
-% \corresp[$\dagger$]{These authors contributed equally to this work.\\}
-
-\corresp[$\ast$]{Corresponding author. 
-\href{mailto:hwb@whu.edu.cn}{hwb@whu.edu.cn}}
-
-% \received{Date}{0}{Year}
-% \revised{Date}{0}{Year}
-% \accepted{Date}{0}{Year}
-
-%\editor{Associate Editor: Name}
-
-%\abstract{
-%\textbf{Motivation:} .\\
-%\textbf{Results:} .\\
-%\textbf{Availability:} .\\
-%\textbf{Contact:} \href{name@email.com}{name@email.com}\\
-%\textbf{Supplementary information:} Supplementary data are available at \textit{Journal Name}
-%online.}
-
-\abstract{
-Molecular graph generation (MGG) is essentially a multi-class generative task, aimed at predicting categories of atoms and bonds under strict chemical and structural constraints. However, many prevailing diffusion paradigms learn to regress numerical embeddings and rely on a hard discretization rule during sampling to recover discrete labels. This introduces a fundamental discrepancy between training and sampling. While models are trained for point-wise numerical fidelity, the sampling process fundamentally relies on crossing categorical decision boundaries. This discrepancy forces the model to expend efforts on intra-class variations that become irrelevant after discretization, ultimately compromising diversity, structural statistics, and generalization performance. Therefore, we propose \textbf{TopBF}, a unified framework that (i) performs MGG directly in continuous parameter distributions, (ii) learns graph-topological understanding through a Quasi-Wasserstein optimal-transport coupling under geodesic costs, and (iii) supports controllable, property-conditioned generation during sampling without retraining the base model. TopBF innovatively employs cumulative distribution function (CDF) to compute category probabilities induced by the Gaussian channel, thereby unifying the training objective with the sampling discretization operation. Experiments on QM9 and ZINC250k demonstrate superior structural fidelity and efficient generation with improved performance. The formal theoretical proofs, experimental details, and supplementary experiments are provided in the appendices.
-} 
-
-% \keywords{Molecular Graph Generation, Bayesian Flow Network, Optimal-Transport Coupling, Drug Discovery}
-
-% \keywords[Abbreviations]{abbreviation1, abbreviation2, abbreviation3, abbreviation4}
-
-% \otherabstract[Additional Abstract]{Use this element for elements such as Graphical abstract, Lay summary, Translated abstract etc. Que cum aut etum qui ium dolupta ssequia autati odis demporepe ad et es alit rem repudaerae min et volorum re volupta nobit volectur aut fuga.}
-
-% \otherabstract[Graphical Abstract]{\colorbox{black!20}{\hbox to 0.97\textwidth{\vbox to 50pt{}}}}
-
-% \boxedtext{Key Messages}{
-% \begin{itemize}
-% \item Key boxed text here.
-% \item Key boxed text here.
-% \item Key boxed text here.
-% \end{itemize}}
 
 \maketitle
 
+\begin{abstract}
+    Molecular graph generation (MGG) is essentially a multi-class generative task, aimed at predicting categories of atoms and bonds under strict chemical and structural constraints. However, many prevailing diffusion paradigms learn to regress numerical embeddings and rely on a hard discretization rule during sampling to recover discrete labels. This introduces a fundamental discrepancy between training and sampling. While models are trained for point-wise numerical fidelity, the sampling process fundamentally relies on crossing categorical decision boundaries. This discrepancy forces the model to expend efforts on intra-class variations that become irrelevant after discretization, ultimately compromising diversity, structural statistics, and generalization performance. Therefore, we propose \textbf{TopBF}, a unified framework that (i) performs MGG directly in continuous parameter distributions, (ii) learns graph-topological understanding through a Quasi-Wasserstein optimal-transport coupling under geodesic costs, and (iii) supports controllable, property-conditioned generation during sampling without retraining the base model. TopBF innovatively employs cumulative distribution function (CDF) to compute category probabilities induced by the Gaussian channel, thereby unifying the training objective with the sampling discretization operation. Experiments on QM9 and ZINC250k demonstrate superior structural fidelity and efficient generation with improved performance. The formal theoretical proofs, experimental details, and supplementary experiments are provided in the appendices.
+\end{abstract}
+
+\begin{IEEEkeywords}
+Molecular Graph Generation, Bayesian Flow Network, Optimal-Transport Coupling, Drug Discovery
+\end{IEEEkeywords}
+
 \section{Introduction}
-
-% discrete (state) diffusion models for continuous/discrete data，用法统一一下
-% class 还是 category？？？？？？？？？？
-
-Molecular graph generation (MGG) is a critical yet challenging endeavor in modern computational drug discovery (\citealt{li2025graph}), facilitating the advancement of downstream tasks such as molecular optimization (\citealt{zhu2023sample,XIONG2026103907}) and drug–target binding affinity prediction (\citealt{wu2024psc,li2025contrastive}). Early computational approaches utilizing deep learning attempted to generate molecular graphs in a one-shot manner (\citealt{zang2020moflow,kong2022molecule}). However, these methods often struggle to model complex structures effectively. In recent years, diffusion models have demonstrated remarkable performance across various generation tasks (\citealt{gong2024text,chen2025antibody}). These models are generally divided into discrete and continuous types and have been progressively integrated into molecular graph generation.
+\label{sec:introduction}
+\IEEEPARstart{M}{olecular} graph generation (MGG) is a critical yet challenging endeavor in modern computational drug discovery \cite{li2025graph}, facilitating the advancement of downstream tasks such as molecular optimization \cite{zhu2023sample,XIONG2026103907} and drug–target binding affinity prediction \cite{IJBHI2,li2025contrastive}. Early computational approaches utilizing deep learning attempted to generate molecular graphs in a one-shot manner \cite{zang2020moflow,kong2022molecule}. However, these methods often struggle to model complex structures effectively. In recent years, diffusion models have demonstrated remarkable performance across various generation tasks \cite{IJBHI1,chen2025antibody}. These models are generally divided into discrete and continuous types and have been progressively integrated into molecular graph generation.
 
 \begin{figure}
     \centering
@@ -178,15 +64,16 @@ Molecular graph generation (MGG) is a critical yet challenging endeavor in moder
     \label{fig:motivation}
 \end{figure}
 
-Naturally suited for discrete graph structures, discrete diffusion models typically define a forward Markov process that corrupts the graph structure through discrete edits. Conversely, the reverse process learns to restore the graph by framing generation as an iterative classification task (\citealt{vignac2023digress,xu2024discrete}). 
+Naturally suited for discrete graph structures, discrete diffusion models typically define a forward Markov process that corrupts the graph structure through discrete edits. Conversely, the reverse process learns to restore the graph by framing generation as an iterative classification task \cite{vignac2023digress,xu2024discrete}. 
 % DiGress performs a series of discrete and random graph editing operations to diffuse the graph structure, with each editing step following a predefined probability transition rule. During the sampling process, DiGress predicts the original state of each atom and bond in the previous step from the perspective of the classification task. DisCo is a diffusion model based on discrete data and continuous time, using continuous time Markov Chain (CTMC) to define the transition process between states with a rate matrix. 
-However, these discrete diffusion models sacrifice the smoother optimization and dynamic generation afforded by continuous representations. Continuous diffusion models have also demonstrated success in this domain (\citealt{jo2022score,luo2023fast}). They operate on a continuous representation of a graph, involving a forward noising process that incrementally perturbs this representation with continuous noise while training a core network to reverse this corruption.
+However, these discrete diffusion models sacrifice the smoother optimization and dynamic generation afforded by continuous representations. Continuous diffusion models have also demonstrated success in this domain \cite{jo2022score,luo2023fast}. They operate on a continuous representation of a graph, involving a forward noising process that incrementally perturbs this representation with continuous noise while training a core network to reverse this corruption.
 % EDP-GNN introduces a permutation equivariant graph neural network to model the score function of the graph distribution. GDSS models the joint distribution of the atoms and bonds through a system of stochastic differential equations (SDEs) and applies score matching objectives to estimate the gradient of the joint log-density. 
 The primary objective of continuous diffusion models is to predict embedded representations in continuous space and train a neural network to regress those values under injected noise. However, the final output must be discretized by rounding, which is not a benign post-processing step. As shown in Figure~\ref{fig:motivation}, it is evident that throughout the entire training phase, these models remain agnostic regarding the discretization rule. The resulting mismatch between training and sampling can lead to inefficient learning and brittle generation. In particular, point-wise regression errors near category boundaries may be penalized mildly during training but induce catastrophic category flips at inference, which is especially problematic for generation.
 
+
 % 这一段写得没有前后逻辑
-Recently, Bayesian Flow Networks (BFNs) (\citealt{graves2023bayesian,song2024unified}) provide an alternative paradigm for discrete generation by evolving distribution parameters through a continuous-time Bayesian updating process. Instead of directly predicting discrete values, BFNs propagate a parameter state that represents uncertainty and update it via pseudo-observations, yielding a continuous and differentiable learning process for discrete data. 
-% However, due to all categories being equidistant within the probability simplex, the model cannot progressively approach objectives in a manner akin to that in continuous space (\citealt{graves2023bayesian}). As a consequence, this results in a convergence process towards data that appears slower and noisier. 
+Recently, Bayesian Flow Networks (BFNs) \cite{graves2023bayesian,song2024unified} provide an alternative paradigm for discrete generation by evolving distribution parameters through a continuous-time Bayesian updating process. Instead of directly predicting discrete values, BFNs propagate a parameter state that represents uncertainty and update it via pseudo-observations, yielding a continuous and differentiable learning process for discrete data. 
+% However, due to all categories being equidistant within the probability simplex, the model cannot progressively approach objectives in a manner akin to that in continuous space \cite{graves2023bayesian}. As a consequence, this results in a convergence process towards data that appears slower and noisier. 
 However, BFNs are not topology-aware for molecular graphs, since they adopt independent Gaussian distributions between variables to retain closed-form Bayesian updates. As a result, BFNs are mainly rewarded for getting each position right in isolation, rather than for capturing how labels should cohere with the overall graph structure.
 
 % 这一段需要好好总结提炼
@@ -203,17 +90,17 @@ We summarize our key contributions as follows:
 \section{Related Work}
 
 % \subsubsection{Generative Models for Molecular Graphs.}
-Deep generative models for MGG are typically categorized into autoregressive and one-shot models. The former generate graphs incrementally, adding atoms and bonds in an autoregressive manner (\citealt{you2018graph,you2018graphrnn,jin2018junction,jin2020hierarchical}). 
-The latter generate the entire graph at once (\citealt{simonovsky2018graphvae,shi2020graphaf,luo2021graphdf,martinkus2022spectre}).
+Deep generative models for MGG are typically categorized into autoregressive and one-shot models. The former generate graphs incrementally, adding atoms and bonds in an autoregressive manner \cite{you2018graphrnn,jin2018junction,jin2020hierarchical}. 
+The latter generate the entire graph at once \cite{simonovsky2018graphvae,luo2021graphdf,martinkus2022spectre}.
 
 % \subsubsection{Diffusion Models for Graph.} 
-Diffusion models have been adapted for molecular graph generation (\citealt{liu2023generative,qiu2023reconstructing,li2024regressor}). 
+Diffusion models have been adapted for molecular graph generation \cite{liu2023generative,li2024regressor}. 
 % These models learn to reverse a diffusion process that gradually adds noise to the structure and features of a molecular graph. A key issue lies in how to handle the discrete nature of atom and bond labels. 
-Some methods define a diffusion process directly on the discrete state space (\citealt{vignac2023digress,xu2024discrete}), which can be complex to accomplish. Others map discrete attributes to a continuous space and apply standard Gaussian diffusion (\citealt{huang2022graphgdp,lee2023exploring}).
+Some methods define a diffusion process directly on the discrete state space \cite{vignac2023digress,xu2024discrete}, which can be complex to accomplish. Others map discrete attributes to a continuous space and apply standard Gaussian diffusion \cite{huang2022graphgdp,lee2023exploring}.
 % however, facing the challenge of accurately converting the final continuous output back to discrete labels without information loss.
 
 % \subsubsection{Bayesian Flow Networks.} 
-BFNs have arisen recently to perform generation in continuous parameter distribution (\citealt{graves2023bayesian,song2024unified,qu2024molcraft}). The process starts with a simple prior distribution and iteratively refines its parameters via Bayesian inference to calculate the posterior from observed samples. 
+BFNs have arisen recently to perform generation in continuous parameter distribution \cite{graves2023bayesian,song2024unified,qu2024molcraft}. The process starts with a simple prior distribution and iteratively refines its parameters via Bayesian inference to calculate the posterior from observed samples. 
 % A key advantage of BFNs is their ability to create a continuous and differentiable training process for discrete data. The original work achieves this by defining the BFN state as a vector of probabilities on the probability simplex and using multiplicative updates. Our work builds upon the foundational principles of BFNs but proposes a different and simpler mechanism for handling discrete features in the context of molecular graph generation.
 
 
@@ -238,7 +125,7 @@ Bayesian Flow Networks can be conceptualized as a data transmission protocol bet
 \subsection{Optimal Transport and Quasi-Wasserstein Coupling on Graphs}
 \label{sec:prelim_ot}
 
-Optimal transport (OT) provides a geometry-aware way to compare two distributions by measuring the minimum cost required to move probability mass from one to the other (\citealt{gabriel2019computational}). Consider a molecular graph $G=(X,A)$ with $N$ atoms, and let $C\in\mathbb{R}_+^{N\times N}$ be the geodesic ground-cost matrix induced by the shortest-path metric on $G$, i.e., $C_{ij}=\mathrm{dist}_{G}(i,j)$. Given two probability distributions $\mathbf{a},\mathbf{b}\in\Delta^{N-1}$ over atom indices, the entropically regularized OT cost is
+Optimal transport (OT) provides a geometry-aware way to compare two distributions by measuring the minimum cost required to move probability mass from one to the other \cite{gabriel2019computational}. Consider a molecular graph $G=(X,A)$ with $N$ atoms, and let $C\in\mathbb{R}_+^{N\times N}$ be the geodesic ground-cost matrix induced by the shortest-path metric on $G$, i.e., $C_{ij}=\mathrm{dist}_{G}(i,j)$. Given two probability distributions $\mathbf{a},\mathbf{b}\in\Delta^{N-1}$ over atom indices, the entropically regularized OT cost is
 $
 \mathcal{W}_{\varepsilon}(\mathbf{a},\mathbf{b};C)
 =
@@ -246,9 +133,9 @@ $
 \langle P, C\rangle
 +
 \varepsilon\sum_{i,j} P_{ij}\big(\log P_{ij}-1\big)$, where $
-\Pi(\mathbf{a},\mathbf{b})=\{P\ge 0\mid P\mathbf{1}=\mathbf{a},~P^\top\mathbf{1}=\mathbf{b}\}$. In practice, we solve the entropy-regularized OT and obtain the coupling $P$ via Sinkhorn iterations (\citealt{cuturi2013sinkhorn}).
+\Pi(\mathbf{a},\mathbf{b})=\{P\ge 0\mid P\mathbf{1}=\mathbf{a},~P^\top\mathbf{1}=\mathbf{b}\}$. In practice, we solve the entropy-regularized OT and obtain the coupling $P$ via Sinkhorn iterations \cite{cuturi2013sinkhorn}.
 
-Quasi-Wasserstein (QW) extends this idea from comparing single scalar signals on atoms to comparing multi-class label fields on graphs. Specifically, for a categorical field with $K$ classes, we view the category probability map $P(\cdot,k)\in[0,1]^N$ as a mass distribution over atom indices for each class $k$, and compare prediction $P(\cdot,k)$ and target $Q(\cdot,k)$ by transporting mass within each class under the same geodesic cost $C$. The QW discrepancy then aggregates these per-class transport costs: 
+Quasi-Wasserstein (QW) extends this idea from comparing single scalar signals on atoms to comparing multi-class label fields on graphs. Specifically, for a categorical field with $K$ classes, we view category probability map $P(\cdot,k)\in[0,1]^N$ as a mass distribution over atom indices for each class $k$, and compare prediction $P(\cdot,k)$ and target $Q(\cdot,k)$ by transporting mass within each class under the same geodesic cost $C$. The QW discrepancy then aggregates these per-class transport costs: 
 $
 \mathcal{D}_{\mathrm{QW}}(P,Q;C)
 =
@@ -257,7 +144,7 @@ $
 \mathbf{a}_k=\mathrm{Norm}\!\big(P(\cdot,k)\big),
 \mathbf{b}_k=\mathrm{Norm}\!\big(Q(\cdot,k)\big),
 $
-where $\mathrm{Norm}(\cdot)$ denotes normalization to the simplex on valid atoms. In contrast to position-wise divergences, $\mathcal{D}_{\mathrm{QW}}$ penalizes errors according to how far probability mass must move along the graph, thereby encouraging local and topology-consistent corrections while discouraging long-range and structure-inconsistent reallocations.
+where $\mathrm{Norm}(\cdot)$ denotes normalization to the simplex on valid atoms. In contrast to position-wise divergences, $\mathcal{D}_{\mathrm{QW}}$ penalizes errors according to how far probability mass moves along the graph, encouraging local and topology-consistent corrections while discouraging long-range and structure-inconsistent reallocations.
 
 
 
@@ -274,11 +161,11 @@ where $\mathrm{Norm}(\cdot)$ denotes normalization to the simplex on valid atoms
 In this section, we describe how our MGG framework, \underline{\textbf{T}}ransp\underline{\textbf{o}}rt-Cou\underline{\textbf{p}}led \underline{\textbf{B}}ayesian \underline{\textbf{F}}lows (TopBF), generates molecular graphs via Bayesian flows over continuous distribution parameters, as illustrated in Figure~\ref{fig:model}. Pseudocodes for training and sampling are provided in Appendix 8. % "into a flow"的表述准确吗？？？？？
 
 \subsection{Datasets and Metrics} 
-% We choose QM9 (\citealt{ramakrishnan2014quantum}) and ZINC250k (\citealt{irwin2012zinc}) for molecular graph generation.
+% We choose QM9 \cite{ramakrishnan2014quantum} and ZINC250k \cite{irwin2012zinc} for molecular graph generation.
 
-We validate our approach on the QM9 (\citealt{ramakrishnan2014quantum}) and ZINC250k (\citealt{irwin2012zinc}) benchmarks, following the previous experimental setup (\citealt{jo2022score}). QM9 contains approximately 133,885 molecules with up to 9 heavy atoms of 4 types, while ZINC250k comprises roughly 249,455 molecules with up to 38 heavy atoms of 9 types, both covering three standard bond types. Adhering to the standard pipeline (\citealt{shi2020graphaf,luo2021graphdf,jo2022score}), molecules undergo kekulization via RDKit, with explicit hydrogens excluded to focus on the heavy-atom graph representation.
+We validate our approach on the QM9 \cite{ramakrishnan2014quantum} and ZINC250k \cite{irwin2012zinc} benchmarks, following the previous experimental setup \cite{jo2022score}. QM9 contains approximately 133,885 molecules with up to 9 heavy atoms of 4 types, while ZINC250k comprises roughly 249,455 molecules with up to 38 heavy atoms of 9 types, both covering three standard bond types. Adhering to the standard pipeline \cite{luo2021graphdf,jo2022score}, molecules undergo kekulization via RDKit, with explicit hydrogens excluded to focus on the heavy-atom graph representation.
 
-We evaluate the experiments following previous evaluation setting (\citealt{jo2022score}): Validity without correction and uniqueness on 10,000 generated molecules. Fréchet ChemNet Distance (FCD) (\citealt{preuer2018frechet}) measures the distance between training and generated sets using the activations from the penultimate layer of the ChemNet. Additionally, Neighborhood Subgraph Pairwise Distance Kernel (NSPDK) maximum mean discrepancy (MMD) (\citealt{costa2010fast}) evaluates the MMD between the generated molecules and test molecules which takes into account both the atom and bond features for evaluation.
+We evaluate the experiments following previous evaluation setting \cite{jo2022score}: Validity without correction and uniqueness on 10,000 generated molecules. Fréchet ChemNet Distance (FCD) \cite{preuer2018frechet} measures the distance between training and generated sets using the activations from the penultimate layer of the ChemNet. Additionally, Neighborhood Subgraph Pairwise Distance Kernel (NSPDK) maximum mean discrepancy (MMD) \cite{costa2010fast} evaluates the MMD between the generated molecules and test molecules which takes into account both the atom and bond features for evaluation.
 
 
 
@@ -305,7 +192,7 @@ Since directly manipulating discrete data often leads to more complex operations
     k_c = \frac{2k-1}{K} - 1, \quad k_l = k_c - \frac{1}{K},\quad k_r = k_c + \frac{1}{K},
 \label{eq:class-mapping}
 \end{equation}
-where $k_l$, $k_c$ and $k_r$ represent the respective vectors for left boundaries, centers and right boundaries of the classes. Importantly, we assign the continuous value $x_k \coloneqq k_c$ to the $k$-th class. This mapping transforms the ground-truth graph $G$ into continuous representation $\mathbf{G}=(\mathbf{X}, \mathbf{A})$. This continuous representation serves as the target signal for the generative flow.
+where $k_l$, $k_c$ and $k_r$ represent the respective vectors for left boundaries, centers and right boundaries of the classes. Importantly, we assign the continuous value $x_k \coloneqq k_c$ to the $k$-th class. This mapping transforms the ground-truth graph $G$ into continuous representation $\mathbf{G}=(\mathbf{X}, \mathbf{A})$. This continuous representation serves as the target signal for generative flow.
 
 \subsection{Bayesian Flow Over Distribution Parameters}
 
@@ -330,7 +217,7 @@ Given continuous $\mathbf{G}=(\mathbf{X}, \mathbf{A})$, the sender distribution 
 where $\mathbf{Y} = (\mathrm{Y}^{(1)}, \cdots, \mathrm{Y}^{(D)})$ is a noisy observation of the true graph, whose noise level increases when $\alpha(t)$ is small.
 
 \subsubsection{Bayesian update and Bayesian flow distribution.}
-BFNs define a Bayesian update that combines the current input distribution $p_I(\mathbf{G} \mid \boldsymbol{\theta})$ with a noisy observation $\mathbf{Y}$ from the sender, yielding a posterior over $\mathbf{G}$ that can again be written as a Gaussian in closed form. Since both $p_I$ and $p_S$ are Gaussians with diagonal covariances, the Bayesian update for each of atoms and bonds reduces to (\citealt{murphy2007conjugate}):
+BFNs define a Bayesian update that combines the current input distribution $p_I(\mathbf{G} \mid \boldsymbol{\theta})$ with a noisy observation $\mathbf{Y}$ from the sender, yielding a posterior over $\mathbf{G}$ that can again be written as a Gaussian in closed form. Since both $p_I$ and $p_S$ are Gaussians with diagonal covariances, the Bayesian update for each of atoms and bonds reduces to \cite{murphy2007conjugate}:
 \begin{equation} % 这个公式查一下正确性；加粗符号
 \label{eq:bayes-update}
 \begin{aligned}
@@ -344,7 +231,7 @@ BFNs define a Bayesian update that combines the current input distribution $p_I(
 \end{equation}
 Repeating this update along a schedule of accuracies induces a stochastic trajectory $\{\boldsymbol{\theta}_t\}_{t \in [0,1]}$ in parameter space that converges towards the true graph $\mathbf{G}$ as $t \to 1$.
 
-Rather than explicitly simulating all intermediate steps, there exists a \emph{Bayesian flow distribution} $p_F(\boldsymbol{\theta}\,|\,\mathbf{G}; t)$ describing the distribution of input parameters at time $t$ after aggregating all past Bayesian updates, as elaborated in Sec.~\ref{pre_BFN}.
+Rather than explicitly simulating all intermediate steps, there exists a \emph{Bayesian flow distribution} $p_F(\boldsymbol{\theta}\,|\,\mathbf{G}; t)$ describing the distribution of input parameters at time $t$ after aggregating all past Bayesian updates, detailed in Sec.~\ref{pre_BFN}.
 % In practice, we can sample $\boldsymbol{\theta}_t \sim p_F(\boldsymbol{\theta} \mid \mathbf{G}; t)$ for random $t \sim \mathcal{U}(0,1)$ and train the core network using Monte Carlo estimates of the flow loss.
 
 Conceptually, the dynamics are defined on \emph{distribution parameters} $(\boldsymbol{\mu}, \rho)$ rather than on data itself. This is the key distinction of TopBF from standard diffusion models.
@@ -389,7 +276,7 @@ where $\gamma(t) = \beta(t)/(1 + \beta(t))$ is determined by the accuracy schedu
 \subsubsection{Truncated Gaussian CDF and per-class probabilities.}
 While Eq.~\eqref{eq:mu-sigma-x} defines a continuous Gaussian distribution over $\mathbf{G}$, our ultimate goal is to make discrete predictions over $K$ classes. To bridge this gap, TopBF uses a truncated Gaussian cumulative distribution function (CDF) to compute the probability mass assigned to each discretization class.
 
-For each dimension $d \in \{1,\cdots,D\}$ we define the Gaussian CDF:
+For each dimension $d \in \{1,\cdots,D\}$, we define the Gaussian CDF:
 \begin{equation}
     F(x \mid \mu_x^{(d)}, \sigma_x^{(d)}) = \frac{1}{2}\Bigg[ 1 + \text{erf} \left( \frac{x-\mu_x^{(d)}}{\sqrt{2}\sigma_x^{(d)}} \right) \Bigg],
 \label{eq:gauss-cdf}
@@ -442,7 +329,7 @@ The receiver plays the role of the \emph{reverse} channel in the flow. During tr
 \subsection{Topology-aware Optimal Transport Matching}
 \label{sec:topo_ot}
 
-Although the position-wise factorization in Eq.~\eqref{eq:po-factorised} enables closed-form Bayesian updates, it also yields largely local and index-wise supervision that does not explicitly encode graph topology. However, categorical errors are not equally severe, since swapping mass within a local neighborhood is structurally less disruptive than relocating it across distant substructures (\citealt{frogner2015learning,cheng2024quasi}). To bridge this gap, we introduce an OT coupling that regularizes predictions under molecule's intrinsic geometry.
+Although the position-wise factorization in Eq.~\eqref{eq:po-factorised} enables closed-form Bayesian updates, it also yields largely local and index-wise supervision that does not explicitly encode graph topology. However, categorical errors are not equally severe, since swapping mass within a local neighborhood is structurally less disruptive than relocating it across distant substructures \cite{frogner2015learning,cheng2024quasi}. To bridge this gap, we introduce an OT coupling that regularizes predictions under molecule's intrinsic geometry.
 
 \subsubsection{Graph-induced Ground Cost.}
 We define the atom-level ground cost by the shortest-path metric: 
@@ -469,7 +356,7 @@ Let $\mathcal{L}(G)$ be the line graph of $G$ whose vertices correspond to bonds
 Thus, $C^{A}$ differs from the exact line-graph geodesic only by an additive constant and induces the same optimal OT coupling (proof in Appendix 3).
 
 \subsubsection{Optimal Transport over Categorical Mass.}
-We make topology awareness a first-class objective by minimizing the transport work needed to align predicted categorical mass with the ground truth (\citealt{peyre2016gromov}).
+We make topology awareness a first-class objective by minimizing the transport work needed to align predicted categorical mass with the ground truth \cite{peyre2016gromov}.
 At time $t$, a sample $\boldsymbol{\theta}_t\sim p_F(\boldsymbol{\theta} \,|\, \mathbf{G};t)$ yields categorical probabilities from Eq.~\eqref{eq:po-factorised}, with targets $Q_X,Q_A$. We form class-wise mass fields by normalizing $P_X(\cdot,k)$ and $P_A(\cdot,k)$ on valid indices and only aggregate over classes that appear in the true graph $G$: $\mathcal{K}_X^{+}(G)=\{k \mid \exists\, i \ \text{s.t.}\ X_i=k\}$ and $\mathcal{K}_A^{+}(G)=\{k \mid \exists\, e \ \text{s.t.}\ A_e=k\}$. Thus we define the QW transport costs
 
 \begin{align}
@@ -519,12 +406,12 @@ Proof is in Appendix 4.2.
   \caption{Performance comparison on QM9 and ZINC250k datasets. The best results are highlighted in \textbf{bold} and the second best are \underline{underlined}. Null values (-) in criteria indicate that statistics are unavailable from the original paper.}
   \renewcommand \arraystretch{1.}
   \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}lccccccccc@{\extracolsep{\fill}}}
-    \toprule
+    \hline
 
     \multirow{2}{*}{Method} & \multicolumn{4}{c}{QM9$_{\,\, (|N|\leq\text{9})}$} & \multicolumn{4}{c}{ZINC250k$_{\,\, (|N|\leq\text{38})}$} & \multirow{2}{*}{\makecell[c]{Sampling \\ Steps}} \\
     \cmidrule(lr){2-5} \cmidrule(lr){6-9}
      & $\text{Valid(\%)}\uparrow$ & Unique$\uparrow$ & FCD$\downarrow$ & NSPDK$\downarrow$ & $\text{Valid(\%)}\uparrow$ & Unique$\uparrow$ & FCD$\downarrow$ & NSPDK$\downarrow$ \\
-    \midrule
+    \hline
     % MoFlow & 91.36 & 98.65 & 4.467 & 0.0169 & 63.76 & 99.99 & 20.875 & 0.0468 & - \\
     EDP-GNN & 47.52 & \underline{99.25} & 2.680 & 0.0046 & 82.97 & 99.79 & 16.737 & 0.0485 & 1000 \\
     % GraphEBM & 8.22 & 97.90 & 6.143 & 0.0287 & 5.29 & 98.79 & 35.467 & 0.2089 & - \\
@@ -538,11 +425,11 @@ Proof is in Appendix 4.2.
     GruM & \underline{99.69} & 96.90 & 0.108 & \underline{0.0002} & 98.65 & 99.97 & 2.257 & 0.0015 & 1000 \\
     DeFoG & 99.30 & 96.30 & 0.120 & - & 99.22 & \underline{99.99} & \underline{1.425} & \textbf{0.0008} & 1000 \\
     SID & 99.67 & 95.66 & 0.504 & \textbf{0.0001} & \textbf{99.50} & 99.84 & 2.010 & 0.0021 & 500 \\
-    \midrule
+    \hline
     % $\text{TopBF}_\text{w/o}$ & 99.54 & \underline{99.03} & 0.143 & 0.0002 & 97.66 & \textbf{100.00} & \textbf{4.028} & \textbf{0.0042} & \textbf{200} \\
     $\text{TopBF}$ & \textbf{99.74} & \textbf{99.27} & \textbf{0.093} & \underline{0.0002} & \underline{99.37} & \textbf{100.00} & \textbf{1.392} & \textbf{0.0008} & \textbf{200} \\
     
-    \botrule
+    \hline
   \end{tabular*}
   \label{tab:1}
 \end{table*}
@@ -595,19 +482,19 @@ This joint objective preserves the original Bayesian flow formulation while enco
 
 \begin{table}
   \centering
-  \caption{Comparison on mean absolute error (MAE) between unconditional generation and PEG guidance generation.}
+  \caption{Comparison on MAE between unconditional generation and PEG guidance generation.}
   \renewcommand \arraystretch{1.}
   \begin{tabular*}{\columnwidth}{@{\extracolsep{\fill}}ccccc@{\extracolsep{\fill}}}
-    \toprule
+    \hline
 
     \multicolumn{2}{c}{Target} & $\mu\downarrow$ & HOMO$\downarrow$ & $\mu$ \& HOMO$\downarrow$ \\
-    \midrule
+    \hline
     \multicolumn{2}{c}{Unconditional} & $\text{1.69}_{\pm\text{0.05}}$ & $\text{0.96}_{\pm\text{0.01}}$ & $\text{1.73}_{\pm\text{0.02}}$ \\
-    \midrule
+    \hline
     \multirow{3}{*}{+PEG} & $\lambda=0.5$ & $\text{0.92}_{\pm\text{0.04}}$ & $\text{0.71}_{\pm\text{0.02}}$ & $\text{0.93}_{\pm\text{0.03}}$ \\
      & $\lambda=1.0$ & $\textbf{0.63}_{\pm\text{0.04}}$ & $\textbf{0.51}_{\pm\text{0.01}}$ & $\textbf{0.77}_{\pm\text{0.03}}$ \\
      & $\lambda=1.5$ & $\text{1.55}_{\pm\text{0.07}}$ & $\text{0.83}_{\pm\text{0.03}}$ & $\text{1.29}_{\pm\text{0.06}}$ \\
-    \botrule
+    \hline
   \end{tabular*}
   \label{tab:qm9-conditional}
 \end{table}
@@ -616,7 +503,7 @@ This joint objective preserves the original Bayesian flow formulation while enco
 % 添加参考文献 property-error gradient (PEG) guidance
 % 修改、检查首次出现的符号
 
-TopBF supports conditional generation without retraining the unconditional flow model. Integrating property control via classifier-free (\citealt{ho2021classifier}) or regressor-free (\citealt{li2024regressor}) guidance often necessitates retraining models from scratch for each target property, which limits their flexibility across different tasks. Instead, we train a separate regressor and apply property-error gradient (PEG) guidance during sampling, which remains flexible for changing targets or composing multiple objectives.
+TopBF supports conditional generation without retraining the unconditional flow model. Integrating property control via classifier-free \cite{ho2021classifier} or regressor-free \cite{li2024regressor} guidance often necessitates retraining models from scratch for each target property, which limits their flexibility across different tasks. Instead, we train a separate regressor and apply property-error gradient (PEG) guidance during sampling, which remains flexible for changing targets or composing multiple objectives.
 
 Let $\mathcal{D}_{\text{prop}}=\{(G_i,\mathbf{z}_i)\}_{i=1}^{M}$ be a property-labeled dataset with property $\mathbf{z}\in\mathbb{R}^{d_z}$. We train a lightweight regressor $R_{\varphi}$ on noisy graphs produced by the same sender corruption used in TopBF so that the regressor predicts the clean property from noisy inputs:
 \begin{equation}
@@ -653,21 +540,21 @@ where $\lambda \geq 0$ controls the guidance strength and $\lambda = 0$ recovers
 
 \begin{table*}
   \centering
-  \caption{Ablation study on Quasi-Wasserstein transport coupling. The best results are highlighted in \textbf{bold} and the second best are \underline{underlined}.}
+  \caption{Ablation study on Quasi-Wasserstein transport coupling. The \textbf{bold} are best results and the \underline{underlined} are second best.}
   \renewcommand \arraystretch{1.}
   \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}cccccccccc@{\extracolsep{\fill}}}
-    \toprule
+    \hline
 
     \multicolumn{2}{c}{QW on} & \multicolumn{4}{c}{QM9$_{\,\, (|N|\leq\text{9})}$} & \multicolumn{4}{c}{ZINC250k$_{\,\, (|N|\leq\text{38})}$} \\
     \cmidrule(lr){1-2} \cmidrule(lr){3-6} \cmidrule(lr){7-10}
      Atoms & Bonds & $\text{Valid(\%)}\uparrow$ & Unique$\uparrow$ & FCD$\downarrow$ & NSPDK$\downarrow$ & $\text{Valid(\%)}\uparrow$ & Unique$\uparrow$ & FCD$\downarrow$ & NSPDK$\downarrow$ \\
-    \midrule
+    \hline
      \ding{56} & \ding{56} & 98.63 & 97.85 & 0.143 & 0.0003 & 94.75 & 99.03 & 3.959 & 0.0031 \\
      \ding{52} & \ding{56} & 98.79 & \underline{99.13} & \underline{0.102} & 0.0003 & 95.61 & \textbf{100.00} & \textbf{1.347} & 0.0011 \\
      \ding{56} & \ding{52} & \textbf{99.81} & 99.05 & 0.107 & \textbf{0.0002} & \underline{99.33} & 99.99 & 2.016 & \underline{0.0009} \\
      \ding{52} & \ding{52} & \underline{99.74} & \textbf{99.27} & \textbf{0.093} & \textbf{0.0002} & \textbf{99.37} & \textbf{100.00} & \underline{1.392} & \textbf{0.0008} \\
     
-    \botrule
+    \hline
   \end{tabular*}
   \label{tab:ablation_qw}
 \end{table*}
@@ -691,38 +578,40 @@ where $\lambda \geq 0$ controls the guidance strength and $\lambda = 0$ recovers
 
 \subsection{Baselines}
 We compare our model against several excellent baselines in MGG. 
-EDP-GNN (\citealt{niu2020permutation}) models graphs with a permutation invariant approach. 
-GDSS (\citealt{jo2022score}) is a score-based diffusion model. 
-DiGress (\citealt{vignac2023digress}) generates graphs using a discrete diffusion process. 
-LGD (\citealt{zhou2024unifying}) provides a unified framework for all-level graph generation and prediction via latent diffusion.
-GruM (\citealt{jo2024graph}) models the generative process as a mixture of endpoint-conditioned diffusion.
-DeFoG (\citealt{qinmadeira2024defog}) using a discrete flow matching framework that defines continuous-time probability paths over categorical attributes.
-SID (\citealt{boget2025simple}) assumes conditional independence between intermediate states to simplify discrete diffusion.
+EDP-GNN \cite{niu2020permutation} models graphs with a permutation invariant approach. 
+GDSS \cite{jo2022score} is a score-based diffusion model. 
+DiGress \cite{vignac2023digress} generates graphs using a discrete diffusion process. 
+LGD \cite{zhou2024unifying} generates and predicts all-level graphs via latent diffusion.
+GruM \cite{jo2024graph} models the generative process as a mixture of endpoint-conditioned diffusion.
+DeFoG \cite{qinmadeira2024defog} using a discrete flow matching framework that defines continuous-time probability paths over categorical attributes.
+SID \cite{boget2025simple} assumes conditional independence between intermediate states to simplify discrete diffusion.
 
 
 \subsection{Molecular Graph Generation}
 % In our experiments, TopBF demonstrates superior performance for most metrics on both QM9 and ZINC250k, as shown in Table~\ref{tab:1}, outperforming previous flow-based, flow matching, and diffusion models. Specifically, overall leading on FCD and NSPDK indicate the molecules generated by TopBF closely align with the distributions of the relevant molecular datasets. Furthermore, the highest score on uniqueness manifests the best diversity performance and exploration capability during generation, which further highlights the deficiency of the methods treating training objective as a regression task. Since all methods attain 100\% validity after molecular correction, recent methods including TopBF meet industrial requirements. Additionally, Table~\ref{tab:1} reveals that TopBF achieves superior effects with significantly fewer sampling steps. We also present randomly selected molecular samples in Appendix~\ref{app:vis} for visualization. 
 % % This compelling evidence highlights the effectiveness of our work, facilitating rapid generation of higher-fidelity and more diverse molecular graphs.
 
-Table~\ref{tab:1} summarizes the main results on QM9 and ZINC250k. Overall, TopBF performs strongly on both datasets and achieves the best or tied-best results on most metrics while using only $200$ sampling steps. This is noteworthy because the main competing diffusion and flow-based methods typically require $500$ or $1000$ steps. The results therefore suggest that TopBF improves sample quality without relying on long sampling trajectories.
+Table~\ref{tab:1} summarizes the results on QM9 and ZINC250k. TopBF achieves the best or tied-best performance on most metrics with only $200$ sampling steps, compared with $500$ or $1000$ for major diffusion and flow baselines.
 
-On QM9, TopBF attains the best validity ($99.74\%$), the best uniqueness ($99.27$), and the best FCD ($0.093$), while remaining tied for second on NSPDK ($0.0002$). Although the absolute improvement in FCD over the strongest baselines is not large, the comparison is already in a near-saturated regime on QM9, where further gains are difficult to obtain. In this setting, the simultaneous improvement in FCD and uniqueness is particularly meaningful, as it indicates that TopBF does not improve distribution matching by sacrificing diversity. Instead, it produces valid and diverse molecules whose overall distribution remains closer to the reference set.
+On QM9, TopBF achieves the best validity ($99.74\%$), uniqueness ($99.27$), and FCD ($0.093$), while tying for second on NSPDK ($0.0002$). These gains indicate improved distribution matching without sacrificing diversity.
 
-On ZINC250k, which is more challenging because of larger graphs and a richer atom vocabulary, TopBF shows a favorable overall profile. It achieves perfect uniqueness at the reported precision, the best FCD ($1.392$), and the best-tied NSPDK ($0.0008$), while maintaining high validity ($99.37\%$). Compared with DeFoG, TopBF further improves FCD from $1.425$ to $1.392$ with substantially fewer sampling steps. Compared with SID, TopBF is slightly lower in raw validity ($99.37\%$ versus $99.50\%$) but yields a markedly better FCD ($1.392$ versus $2.010$), suggesting a better match to the global chemical distribution. Taken together, these results indicate that TopBF offers a balanced improvement in validity, diversity, and distributional fidelity across both easy and difficult benchmarks. Randomly selected generated molecules are provided in Appendix 7.
+On ZINC250k, TopBF attains perfect uniqueness ($100.00$), the best FCD ($1.392$), and best NSPDK ($0.0008$), with $99.37\%$ validity. It improves FCD over DeFoG ($1.425$) with fewer sampling steps and substantially outperforms SID in FCD ($2.010$), despite slightly lower validity ($99.50\%$ for SID). Overall, TopBF provides a strong balance of validity, diversity, distributional fidelity, and sampling efficiency. Randomly selected molecules are shown in Appendix 7.
 
 
 
 \subsection{Conditional Generation}
 
-% We assess the controllability of TopBF on QM9 by conditioning on graph-level properties, following the setting of DiGress (\citealt{vignac2023digress}). From the QM9 test split we randomly select $100$ molecules, record their dipole moment $\mu$ and HOMO energy, and use each pair $(\mu^\star,\mathrm{HOMO}^\star)$ as a target. For every target we generate $10$ molecules unconditionally and conditionally with PEG guidance, respectively. $\mu$ and HOMO are computed with Psi4 (\citealt{smith2020psi4}) from conformers built with RDKit \footnote{\url{https://www.rdkit.org}}, and mean absolute error (MAE) is reported between the targets and the estimated properties for above three tasks. We also carry out sensitivity analysis on $\lambda$. As shown in Table~\ref{tab:qm9-conditional}, TopBF with PEG guidance consistently yields lower MAE than the unconditional sampler, demonstrating effective property control. PEG with $\lambda=1.0$ performs best, as we infer that $\lambda=0.5$ guides little during sampling and guidance strength with $\lambda=1.5$ invades the original gradient to generate valid molecules, affecting the property values conversely.
+% We assess the controllability of TopBF on QM9 by conditioning on graph-level properties, following the setting of DiGress \cite{vignac2023digress}. From the QM9 test split we randomly select $100$ molecules, record their dipole moment $\mu$ and HOMO energy, and use each pair $(\mu^\star,\mathrm{HOMO}^\star)$ as a target. For every target we generate $10$ molecules unconditionally and conditionally with PEG guidance, respectively. $\mu$ and HOMO are computed with Psi4 \cite{smith2020psi4} from conformers built with RDKit \footnote{\url{https://www.rdkit.org}}, and mean absolute error (MAE) is reported between the targets and the estimated properties for above three tasks. We also carry out sensitivity analysis on $\lambda$. As shown in Table~\ref{tab:qm9-conditional}, TopBF with PEG guidance consistently yields lower MAE than the unconditional sampler, demonstrating effective property control. PEG with $\lambda=1.0$ performs best, as we infer that $\lambda=0.5$ guides little during sampling and guidance strength with $\lambda=1.5$ invades the original gradient to generate valid molecules, affecting the property values conversely.
 
-We next examine whether TopBF supports controllable generation on QM9. From the QM9 test split we randomly select $100$ molecules, record their dipole moment $\mu$ and HOMO energy, and use each pair $(\mu^\star,\mathrm{HOMO}^\star)$ as a target. For every target we generate $10$ molecules unconditionally and conditionally with PEG guidance, respectively. $\mu$ and HOMO are computed with Psi4 (\citealt{smith2020psi4}) from conformers built with RDKit \footnote{\url{https://www.rdkit.org}}, and mean absolute error (MAE) is reported between the targets and the estimated properties for above three tasks. As shown in Table~\ref{tab:qm9-conditional}, PEG guidance consistently reduces the MAE relative to unconditional sampling for all three tasks, namely dipole moment $\mu$, HOMO energy, and joint conditioning on both properties. The best performance is obtained at $\lambda=1.0$, where the MAE decreases from $1.69$ to $0.63$ for $\mu$, from $0.96$ to $0.51$ for HOMO, and from $1.73$ to $0.77$ for joint conditioning. These results show that TopBF can be steered effectively towards desired molecular properties without retraining the base generative model. We also observe a clear dependence on the guidance strength: $\lambda=0.5$ improves control but remains conservative, whereas $\lambda=1.5$ weakens performance relative to $\lambda=1.0$, indicating that overly strong guidance may disturb the original sampling trajectory.
+% We next examine whether TopBF supports controllable generation on QM9. From the QM9 test split we randomly select $100$ molecules, record their dipole moment $\mu$ and HOMO energy, and use each pair $(\mu^\star,\mathrm{HOMO}^\star)$ as a target. For every target we generate $10$ molecules unconditionally and conditionally with PEG guidance, respectively. $\mu$ and HOMO are computed with Psi4 \cite{smith2020psi4} from conformers built with RDKit \footnote{\url{https://www.rdkit.org}}, and mean absolute error (MAE) is reported between the targets and the estimated properties for above three tasks. As shown in Table~\ref{tab:qm9-conditional}, PEG guidance consistently reduces the MAE relative to unconditional sampling for all three tasks, namely dipole moment $\mu$, HOMO energy, and joint conditioning on both properties. The best performance is obtained at $\lambda=1.0$, where the MAE decreases from $1.69$ to $0.63$ for $\mu$, from $0.96$ to $0.51$ for HOMO, and from $1.73$ to $0.77$ for joint conditioning. These results show that TopBF can be steered effectively towards desired molecular properties without retraining the base generative model. We also observe a clear dependence on the guidance strength: $\lambda=0.5$ improves control but remains conservative, whereas $\lambda=1.5$ weakens performance relative to $\lambda=1.0$, indicating that overly strong guidance may disturb the original sampling trajectory.
+
+We evaluate controllable generation on QM9 using $100$ test molecules, taking each molecule's dipole moment $\mu$ and HOMO energy as targets. For each target, we generate $10$ molecules with and without PEG guidance. Properties are computed with Psi4 \cite{smith2020psi4} from RDKit conformers \footnote{\url{https://www.rdkit.org}}, and mean absolute error (MAE) is reported for $\mu$, HOMO, and joint conditioning. As shown in Table~\ref{tab:qm9-conditional}, PEG consistently reduces MAE, with $\lambda=1.0$ performing best: $1.69\!\to\!0.63$ for $\mu$, $0.96\!\to\!0.51$ for HOMO, and $1.73\!\to\!0.77$ jointly. Thus, TopBF supports effective property control without retraining. Moreover, $\lambda=0.5$ improves control but remains conservative, whereas $\lambda=1.5$ weakens performance relative to $\lambda=1.0$, indicating that overly strong guidance may disturb the original sampling trajectory.
 
 
 
 
 \subsection{Sampling Efficiency and Effect}
-% We conduct a sampling efficiency experiment to compare the sampling velocity against representative baselines. As manifested in Figure~\ref{fig:sampling}, our method exhibits exceptional performance during initial 100 steps. Scores could be further improved if sampling with steps longer than 200. However, we choose 200 steps as the best accuracy-efficiency trade-off. This characteristic renders TopBF well-suited for generating high-quality molecular samples while maintaining competitive in inference time. 
+% We conduct a sampling efficiency experiment to compare the sampling velocity against representative baselines. As manifested in Figure~\ref{fig:sampling}, our method exhibits exceptional performance during initial 100 steps. Scores could be further improved if sampling with steps longer than 200. However, we choose 200 steps as the best accuracy-efficiency trade-off. This characteristic renders TopBF well-suited for generating high-quality molecular samples while maintaining competitive in inference time.
 
 Figure~\ref{fig:sampling} compares TopBF with representative baselines under different sampling budgets. TopBF reaches a strong performance within the first $100$ steps and continues to improve with additional steps, although the gains become more gradual afterwards. Based on this trend, we use $200$ steps as the default setting, which provides a favorable balance between generation quality and computational cost. Under this budget, TopBF remains competitive with, and in several cases superior to, methods that require considerably longer trajectories. This behaviour is consistent with the Bayesian flow formulation, where the model directly evolves distribution parameters and produces useful categorical confidence early in the sampling process.
 
@@ -747,7 +636,7 @@ In this paper, we introduce \textbf{TopBF}, a transport-coupled Bayesian Flow fr
 
 \section*{Supplementary data}
 
-Supplementary data are available as an attachment.
+Supplementary data are available as an attachment. Reproducible code is available at \url{https://github.com/Cello2195/TopBF/tree/main}.
 
 % \section*{Conflict of interest}
 
@@ -768,59 +657,8 @@ Independent Project of Basic Scientific Research Business Fundation of Chinese A
 
 
 
-%UNCOMMENT THE BELOW TWO LINES IN CASE YOU NEED AUTHOR YEAR FORMAT.
-\bibliographystyle{oup-abbrvnat}
+
+\bibliographystyle{IEEEtran}
 \bibliography{reference}
-
-% UNCOMMENT THE BELOW TWO LINES IN CASE YOU NEED NUMBERED FORMAT.
-% \bibliographystyle{oup-plain}
-% \bibliography{reference}
-
-
-
-% \begin{appendices}
-% \newpage
-% \input{appendix.tex}
-
-
-
-% % \bibliography{bib/ref}
-% % \bibliographystyle{IEEEtran}
-% % \bibliography{refs}
-
-
-
-% \section*{Code availability}
-% The source data and codes of DTIAM are available on GitHub at \url{https://github.com/Cello2195/MMCDS}. Rigid docking was performed by Schrödinger (\url{https://www.schrodinger.com}). Preferential binding mode was visualized by Pymol v3.0.3 (\url{https://www.pymol.org/}). RDKit v2023.3.3 (\url{https://www.rdkit.org/}) and ChemDraw v23.1.1 (\url{https://revvitysignals.com/products/research/chemdraw}) were utilized to obtain and visualize the chemical structure from the SMILES. OriginPro 2024b v10.1.5.132 (\url{https://www.originlab.com/}) was used for plotting the data.
-
-% This work was supported in part by the Natural Science Foundation of China (No. 62476203, No. 32270905), Key Project of Traditional Chinese Medicine Joint Fund of Hubei Provincial Natural Science Foundation (No. 2025AFD47), Hubei Province Science and Technology Innovation Plan Project (No. 2025BCB035), the Guangdong Provincial Natural Science Foundation General Project (No. 2025A1515012155). It was also supported by the Natural Science Foundation of Hubei Province - Innovation Group project (No. 2024AFA018), Shenzhen Municipal Science and Technology Innovation Committee (JCYJ20240813111406009), Zhongnan Hospital (ZNLH202206), and Yichun Maternal and Child Health Hospital to Dr. Mengcheng Luo.
-
-% \section*{Contributions}
-
-% K.L., L.M, and Y.X. contributed equally. \textbf{Y.X.,} X.W., Y.L., M.L., and W.H, conceived and directed the project. All authors contributed substantially to the design and execution of the study, and have reviewed and approved the final manuscript. \textbf{K.L., L.M, and Y.X.} processed the experimental data, performed the analysis, drafted the manuscript and designed the figures.  All contributions have been appropriately acknowledged. The research was conducted in a collaborative and inclusive manner, with equitable involvement of all partners.
-
-% \section*{Ethics declarations}
-
-% \textbf{Competing interests}. The authors declare no competing interests.
-
-% UNCOMMENT THE BELOW TWO LINES IN CASE YOU NEED NUMBERED FORMAT.
-% \bibliographystyle{oup-plain}
-% \bibliography{reference}
-
-
-
-% \section*{Appendix A: Methods}
-
-
-
-
-% ==============================
-% \begin{appendices}
-
-
-
-% \end{appendices}
-
-
 
 \end{document}
